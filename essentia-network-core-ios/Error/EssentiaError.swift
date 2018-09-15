@@ -6,7 +6,6 @@
 //  Copyright © 2018 Essentia-One. All rights reserved.
 //
 
-
 import Foundation
 
 public enum EssentiaError: Error, Decodable {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NetworkManagerInterface {
+public protocol NetworkManagerInterface {
     
     func makeRequest<SuccessModel: Decodable> (
         _ request: RequestProtocol,
