@@ -8,15 +8,15 @@
 
 import Foundation
 
-class NetworkManager: NetworkManagerInterface {
+public class NetworkManager: NetworkManagerInterface {
     
-    init(_ serverUrl: String) {
+    public init(_ serverUrl: String) {
         self.serverUrl = serverUrl
     }
     
     let serverUrl: String
     
-    func makeRequest<SuccessModel: Decodable> (
+    public func makeRequest<SuccessModel: Decodable> (
             _ request: RequestProtocol,
             result: @escaping (Result<SuccessModel>) -> Void
         ) {

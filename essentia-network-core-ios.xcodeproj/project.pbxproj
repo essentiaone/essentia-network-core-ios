@@ -17,7 +17,30 @@
 		346B7B0A214D554F003BF737 /* LoggerEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B08214D554F003BF737 /* LoggerEventType.swift */; };
 		346B7B0C214D55AE003BF737 /* EssentiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B0B214D55AE003BF737 /* EssentiaError.swift */; };
 		346B7B0F214D55E9003BF737 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B0E214D55E9003BF737 /* ErrorMessage.swift */; };
+		34B70BA6214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B70BA5214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift */; };
+		34B70BA8214D5BBC00FFD48C /* libessentia-network-core-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 346B7AED214D5204003BF737 /* libessentia-network-core-ios.a */; };
+		34B70BAF214D5C2C00FFD48C /* TestEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B70BAE214D5C2C00FFD48C /* TestEndpoint.swift */; };
+		34B70BB0214D5DB700FFD48C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AF8214D54F1003BF737 /* NetworkManager.swift */; };
+		34B70BB1214D5DBA00FFD48C /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFB214D54F1003BF737 /* RequestProtocol.swift */; };
+		34B70BB2214D5DF600FFD48C /* NetworkManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AF9214D54F1003BF737 /* NetworkManagerInterface.swift */; };
+		34B70BB3214D5DFE00FFD48C /* EssentiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B0B214D55AE003BF737 /* EssentiaError.swift */; };
+		34B70BB4214D5E0200FFD48C /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B0E214D55E9003BF737 /* ErrorMessage.swift */; };
+		34B70BB5214D5E0400FFD48C /* LoggerEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B08214D554F003BF737 /* LoggerEventType.swift */; };
+		34B70BB6214D5E0800FFD48C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7B07214D554F003BF737 /* Logger.swift */; };
+		34B70BB7214D5E0D00FFD48C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFA214D54F1003BF737 /* RequestBuilder.swift */; };
+		34B70BB8214D5E1100FFD48C /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFF214D54F1003BF737 /* URLRequest+curl.swift */; };
+		34B70BB9214D5E1500FFD48C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFD214D54F1003BF737 /* Result.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34B70BA9214D5BBC00FFD48C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 346B7AE5214D5204003BF737 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 346B7AEC214D5204003BF737;
+			remoteInfo = "essentia-network-core-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		346B7AEB214D5204003BF737 /* CopyFiles */ = {
@@ -43,6 +66,10 @@
 		346B7B08214D554F003BF737 /* LoggerEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerEventType.swift; sourceTree = "<group>"; };
 		346B7B0B214D55AE003BF737 /* EssentiaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentiaError.swift; sourceTree = "<group>"; };
 		346B7B0E214D55E9003BF737 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		34B70BA3214D5BBC00FFD48C /* essentia-network-core-ios-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "essentia-network-core-ios-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34B70BA5214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentiaNetworkCoreTests.swift; sourceTree = "<group>"; };
+		34B70BA7214D5BBC00FFD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34B70BAE214D5C2C00FFD48C /* TestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +80,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34B70BA0214D5BBC00FFD48C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B70BA8214D5BBC00FFD48C /* libessentia-network-core-ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				346B7AEF214D5204003BF737 /* essentia-network-core-ios */,
+				34B70BA4214D5BBC00FFD48C /* essentia-network-core-ios-tests */,
 				346B7AEE214D5204003BF737 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				346B7AED214D5204003BF737 /* libessentia-network-core-ios.a */,
+				34B70BA3214D5BBC00FFD48C /* essentia-network-core-ios-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +166,16 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		34B70BA4214D5BBC00FFD48C /* essentia-network-core-ios-tests */ = {
+			isa = PBXGroup;
+			children = (
+				34B70BA5214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift */,
+				34B70BA7214D5BBC00FFD48C /* Info.plist */,
+				34B70BAE214D5C2C00FFD48C /* TestEndpoint.swift */,
+			);
+			path = "essentia-network-core-ios-tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +186,7 @@
 				346B7AE9214D5204003BF737 /* Sources */,
 				346B7AEA214D5204003BF737 /* Frameworks */,
 				346B7AEB214D5204003BF737 /* CopyFiles */,
+				34B70B9E214D593100FFD48C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -148,6 +196,24 @@
 			productName = "essentia-network-core-ios";
 			productReference = 346B7AED214D5204003BF737 /* libessentia-network-core-ios.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		34B70BA2214D5BBC00FFD48C /* essentia-network-core-ios-tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34B70BAD214D5BBC00FFD48C /* Build configuration list for PBXNativeTarget "essentia-network-core-ios-tests" */;
+			buildPhases = (
+				34B70B9F214D5BBC00FFD48C /* Sources */,
+				34B70BA0214D5BBC00FFD48C /* Frameworks */,
+				34B70BA1214D5BBC00FFD48C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34B70BAA214D5BBC00FFD48C /* PBXTargetDependency */,
+			);
+			name = "essentia-network-core-ios-tests";
+			productName = "essentia-network-core-ios-tests";
+			productReference = 34B70BA3214D5BBC00FFD48C /* essentia-network-core-ios-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -160,6 +226,9 @@
 				ORGANIZATIONNAME = "Essentia-One";
 				TargetAttributes = {
 					346B7AEC214D5204003BF737 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					34B70BA2214D5BBC00FFD48C = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -177,9 +246,36 @@
 			projectRoot = "";
 			targets = (
 				346B7AEC214D5204003BF737 /* essentia-network-core-ios */,
+				34B70BA2214D5BBC00FFD48C /* essentia-network-core-ios-tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34B70BA1214D5BBC00FFD48C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34B70B9E214D593100FFD48C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		346B7AE9214D5204003BF737 /* Sources */ = {
@@ -199,7 +295,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34B70B9F214D5BBC00FFD48C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34B70BB3214D5DFE00FFD48C /* EssentiaError.swift in Sources */,
+				34B70BB4214D5E0200FFD48C /* ErrorMessage.swift in Sources */,
+				34B70BB8214D5E1100FFD48C /* URLRequest+curl.swift in Sources */,
+				34B70BB0214D5DB700FFD48C /* NetworkManager.swift in Sources */,
+				34B70BAF214D5C2C00FFD48C /* TestEndpoint.swift in Sources */,
+				34B70BB6214D5E0800FFD48C /* Logger.swift in Sources */,
+				34B70BB9214D5E1500FFD48C /* Result.swift in Sources */,
+				34B70BB7214D5E0D00FFD48C /* RequestBuilder.swift in Sources */,
+				34B70BB5214D5E0400FFD48C /* LoggerEventType.swift in Sources */,
+				34B70BA6214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift in Sources */,
+				34B70BB2214D5DF600FFD48C /* NetworkManagerInterface.swift in Sources */,
+				34B70BB1214D5DBA00FFD48C /* RequestProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		34B70BAA214D5BBC00FFD48C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 346B7AEC214D5204003BF737 /* essentia-network-core-ios */;
+			targetProxy = 34B70BA9214D5BBC00FFD48C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		346B7AF2214D5204003BF737 /* Debug */ = {
@@ -342,6 +465,42 @@
 			};
 			name = Release;
 		};
+		34B70BAB214D5BBC00FFD48C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X24R65DM8E;
+				INFOPLIST_FILE = "essentia-network-core-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Essentia.essentia-network-core-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34B70BAC214D5BBC00FFD48C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X24R65DM8E;
+				INFOPLIST_FILE = "essentia-network-core-ios-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Essentia.essentia-network-core-ios-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -359,6 +518,15 @@
 			buildConfigurations = (
 				346B7AF5214D5204003BF737 /* Debug */,
 				346B7AF6214D5204003BF737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34B70BAD214D5BBC00FFD48C /* Build configuration list for PBXNativeTarget "essentia-network-core-ios-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34B70BAB214D5BBC00FFD48C /* Debug */,
+				34B70BAC214D5BBC00FFD48C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
