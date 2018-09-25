@@ -15,8 +15,8 @@ public enum EssentiaError: Error, Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         do {
-            let leftValue =  try container.decode(ErrorMessage.self, forKey: .error)
-            self = .error(leftValue)
+            let leftValue = try container.decode(String.self, forKey: .error)
+            self = .error(ErrorMessage(error:leftValue))
         } catch {
             self = .unknownError
         }
