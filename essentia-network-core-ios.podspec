@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'essentia-network-core-ios'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'Essentia network core'
 
   s.homepage         = 'https://github.com/essentiaone/essentia-network-core-ios.git'
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
-  s.module_name   = "EssentiaNetworkCore"
+  s.module_name   = "essentia-network-core-ios"
   s.source_files = 'essentia-network-core-ios/**/*.{swift}'
   
 end
