@@ -15,7 +15,7 @@ fileprivate enum Constants {
     static var httpRequestMarker = "🌏 "
 }
 
-enum LoggerEventMessageType {
+public enum LoggerEventMessageType {
     case info
     case warning
     case error
@@ -32,7 +32,7 @@ enum LoggerEventMessageType {
     }
 }
 
-internal enum LoggerEventType {
+public enum LoggerEventType {
     case message(LoggerEventMessageType, String?)
     case httpRequest(URLRequest)
     

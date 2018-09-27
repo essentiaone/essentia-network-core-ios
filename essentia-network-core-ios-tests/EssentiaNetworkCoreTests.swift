@@ -8,6 +8,11 @@
 
 import XCTest
 
+private var responce: [String: Any] =  ["userId": 1,
+                         "id": 1,
+                         "title": "delectus aut autem",
+                         "completed": false]
+
 class EssentiaNetworkCoreTests: XCTestCase {
     let network = NetworkManager("https://jsonplaceholder.typicode.com")
     
@@ -24,18 +29,14 @@ class EssentiaNetworkCoreTests: XCTestCase {
     
     func testExample() {
         let expectation = self.expectation(description: "Returns responce")
-        network.makeRequest(TestEndpoint.one) { (result: Result<String>) in
-            expectation.fulfill()
-            print(result)
+        network.makeRequest(TestEndpoint.one) { (result: Result<TestResponceModel>) in
+            switch result {
+            case .success:
+                expectation.fulfill()
+            case .failure:
+                XCTFail()
+            }
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

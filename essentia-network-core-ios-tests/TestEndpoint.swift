@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct TestResponceModel: Codable {
+    var userId: Int
+    var id: Int
+    var title: String
+    var completed: Bool
+}
+
 enum TestEndpoint: RequestProtocol {
     var path: String {
         return "/todos/1"

@@ -18,7 +18,7 @@ public class Logger {
         return Logger()
     }
     
-    internal func logEvent(_ event: LoggerEventType) {
+    public func logEvent(_ event: LoggerEventType) {
         var message = event.consoleMarker
         switch event {
         case .httpRequest(let request):
