@@ -29,7 +29,7 @@ class EssentiaNetworkCoreTests: XCTestCase {
     
     func testExample() {
         let expectation = self.expectation(description: "Returns responce")
-        network.makeRequest(TestEndpoint.one) { (result: Result<TestResponceModel>) in
+        network.makeAsyncRequest(TestEndpoint.one) { (result: Result<TestResponceModel>) in
             switch result {
             case .success:
                 expectation.fulfill()
