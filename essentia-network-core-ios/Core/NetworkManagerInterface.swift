@@ -14,4 +14,8 @@ public protocol NetworkManagerInterface {
         _ request: RequestProtocol,
         result: @escaping (Result<SuccessModel>) -> Void
     )
+    func makeAsyncRequest<SuccessModel: Decodable> (
+        _ request: RequestProtocol,
+        result: @escaping (Result<SuccessModel>) -> Void
+    )
 }

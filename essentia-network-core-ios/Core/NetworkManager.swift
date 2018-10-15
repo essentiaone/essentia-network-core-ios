@@ -9,16 +9,25 @@
 import Foundation
 
 public class NetworkManager: NetworkManagerInterface {
-    
     public init(_ serverUrl: String) {
         self.serverUrl = serverUrl
+        
     }
     
     let serverUrl: String
     
-    public func makeRequest<SuccessModel: Decodable> (
+    public func makeAsyncRequest<SuccessModel: Decodable> (
             _ request: RequestProtocol,
             result: @escaping (Result<SuccessModel>) -> Void
+        ) {
+        DispatchQueue.global().async {
+            self.makeRequest(request, result: result)
+        }
+    }
+    
+    public func makeRequest<SuccessModel: Decodable> (
+        _ request: RequestProtocol,
+        result: @escaping (Result<SuccessModel>) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
         let urlRequest = requestBuilder.build(for: serverUrl)
@@ -26,7 +35,7 @@ public class NetworkManager: NetworkManagerInterface {
         case .json:
             URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
                 self.handleResponse(response: (data, error), result: result)
-            }.resume()
+                }.resume()
         }
         Logger.shared.logEvent(.httpRequest(urlRequest))
     }
@@ -35,7 +44,7 @@ public class NetworkManager: NetworkManagerInterface {
             response: (Data?, Error?),
             result: @escaping (Result<SuccessModel>) -> Void
         ) {
-        OperationQueue.main.addOperation {
+        DispatchQueue.main.async {
             guard let data = response.0 else {
                 result(.failure(.unknownError))
                 return
