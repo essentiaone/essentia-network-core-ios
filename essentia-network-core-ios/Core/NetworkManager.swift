@@ -9,9 +9,14 @@
 import Foundation
 
 public class NetworkManager: NetworkManagerInterface {
+    private var urlSession: URLSession
+    
     public init(_ serverUrl: String) {
         self.serverUrl = serverUrl
-        
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
+        urlSession = URLSession(configuration: config)
     }
     
     let serverUrl: String
@@ -33,7 +38,7 @@ public class NetworkManager: NetworkManagerInterface {
         let urlRequest = requestBuilder.build(for: serverUrl)
         switch request.contentType {
         case .json:
-            URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 self.handleResponse(response: (data, error), result: result)
                 }.resume()
         }
