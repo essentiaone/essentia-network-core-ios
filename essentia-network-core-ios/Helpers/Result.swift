@@ -8,5 +8,5 @@
 
 public enum Result<Object: Decodable> {
     case success(Object)
-    case failure(EssentiaError)
+    case failure(EssentiaNetworkError)
 }
