@@ -26,11 +26,11 @@ public class NetworkManager: NetworkManagerInterface {
             result: @escaping (Result<SuccessModel>) -> Void
         ) {
         DispatchQueue.global().async {
-            self.makeRequest(request, result: result)
+            self.makeSyncRequest(request, result: result)
         }
     }
     
-    public func makeRequest<SuccessModel: Decodable> (
+    public func makeSyncRequest<SuccessModel: Decodable> (
         _ request: RequestProtocol,
         result: @escaping (Result<SuccessModel>) -> Void
         ) {
@@ -69,7 +69,7 @@ public class NetworkManager: NetworkManagerInterface {
             result: @escaping (Result<SuccessModel>) -> Void
         ) {
         let decoder = JSONDecoder()
-        guard let failedObject = try? decoder.decode(EssentiaError.self, from: response) else {
+        guard let failedObject = try? decoder.decode(EssentiaNetworkError.self, from: response) else {
             Logger.shared.logEvent(.message(.error, String(data: response, encoding: .utf8)))
             result(.failure(.unknownError))
             return
