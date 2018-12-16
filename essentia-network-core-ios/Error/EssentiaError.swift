@@ -25,4 +25,13 @@ public enum EssentiaError: Error, Decodable {
     enum CodingKeys: CodingKey {
         case unknownError, error
     }
+    
+    public var localizedDescription: String {
+        switch self {
+        case .unknownError:
+            return "Unknows error"
+        case .error(let message):
+            return message.error
+        }
+    }
 }
