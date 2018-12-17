@@ -51,11 +51,14 @@ public class NetworkManager: NetworkManagerInterface {
         ) {
         DispatchQueue.main.async {
             guard let data = response.0 else {
-                result(.failure(.unknownError))
+                guard let error = response.1 else {
+                    result(.failure(.unknownError))
+                    return
+                }
+                result(.failure(EssentiaError.defaultError(error)))
                 return
             }
-            let decoder = JSONDecoder()
-            guard let object = try? decoder.decode(SuccessModel.self, from: data) else {
+            guard let object = try? JSONDecoder().decode(SuccessModel.self, from: data) else {
                 Logger.shared.logEvent(.message(.warning, String(data: data, encoding: .utf8)))
                 self.handleError(response: data, result: result)
                 return

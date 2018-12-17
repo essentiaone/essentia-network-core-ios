@@ -33,10 +33,10 @@ class EssentiaNetworkCoreTests: XCTestCase {
             switch result {
             case .success:
                 expectation.fulfill()
-            case .failure:
-                XCTFail()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
 }

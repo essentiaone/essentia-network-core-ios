@@ -11,6 +11,7 @@ import Foundation
 public enum EssentiaError: Error, Decodable {
     case error(ErrorMessage)
     case unknownError
+    case defaultError(Error)
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -32,6 +33,8 @@ public enum EssentiaError: Error, Decodable {
             return "Unknows error"
         case .error(let message):
             return message.error
+        case .defaultError(let error):
+            return error.localizedDescription
         }
     }
 }
