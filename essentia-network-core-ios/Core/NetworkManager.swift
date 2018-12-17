@@ -23,7 +23,7 @@ public class NetworkManager: NetworkManagerInterface {
     
     public func makeAsyncRequest<SuccessModel: Decodable> (
             _ request: RequestProtocol,
-            result: @escaping (Result<SuccessModel>) -> Void
+            result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         DispatchQueue.global().async {
             self.makeSyncRequest(request, result: result)
@@ -32,7 +32,7 @@ public class NetworkManager: NetworkManagerInterface {
     
     public func makeSyncRequest<SuccessModel: Decodable> (
         _ request: RequestProtocol,
-        result: @escaping (Result<SuccessModel>) -> Void
+        result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         let requestBuilder = RequestBuilder(request: request)
         let urlRequest = requestBuilder.build(for: serverUrl)
@@ -47,7 +47,7 @@ public class NetworkManager: NetworkManagerInterface {
     
     private func handleResponse<SuccessModel: Decodable> (
             response: (Data?, Error?),
-            result: @escaping (Result<SuccessModel>) -> Void
+            result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         DispatchQueue.main.async {
             guard let data = response.0 else {
@@ -66,7 +66,7 @@ public class NetworkManager: NetworkManagerInterface {
     
     private func handleError<SuccessModel: Decodable> (
             response: Data,
-            result: @escaping (Result<SuccessModel>) -> Void
+            result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         let decoder = JSONDecoder()
         guard let failedObject = try? decoder.decode(EssentiaNetworkError.self, from: response) else {
