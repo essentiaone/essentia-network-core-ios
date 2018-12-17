@@ -8,6 +8,9 @@
 
 import Foundation
 
+public typealias HTTPHeader = [String: String]
+public typealias HTTParametrs = [String: Any]
+
 fileprivate enum Constants {
     static var jsonContentType = "application/json"
 }
@@ -31,8 +34,8 @@ public enum RequestContentType {
 
 public protocol RequestProtocol {
     var path: String { get }
-    var extraHeaders: [String: String]? { get }
-    var parameters: [String: Any]? { get }
+    var extraHeaders: HTTPHeader? { get }
+    var parameters: HTTParametrs? { get }
     var requestType: RequestType { get }
     var contentType: RequestContentType { get }
 }

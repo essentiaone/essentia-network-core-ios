@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum EssentiaError: Error, Decodable {
+public enum EssentiaNetworkError: Error, Decodable {
     case error(ErrorMessage)
     case unknownError
     case defaultError(Error)
@@ -17,7 +17,7 @@ public enum EssentiaError: Error, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         do {
             let leftValue = try container.decode(String.self, forKey: .error)
-            self = .error(ErrorMessage(error:leftValue))
+            self = .error(ErrorMessage(error: leftValue))
         } catch {
             self = .unknownError
         }
