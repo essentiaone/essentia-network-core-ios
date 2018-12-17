@@ -55,7 +55,7 @@ public class NetworkManager: NetworkManagerInterface {
                     result(.failure(.unknownError))
                     return
                 }
-                result(.failure(EssentiaError.defaultError(error)))
+                result(.failure(EssentiaNetworkError.defaultError(error)))
                 return
             }
             guard let object = try? JSONDecoder().decode(SuccessModel.self, from: data) else {
