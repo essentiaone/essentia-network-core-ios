@@ -29,14 +29,14 @@ class EssentiaNetworkCoreTests: XCTestCase {
     
     func testExample() {
         let expectation = self.expectation(description: "Returns responce")
-        network.makeAsyncRequest(TestEndpoint.one) { (result: Result<TestResponceModel>) in
+        network.makeAsyncRequest(TestEndpoint.one) { (result: NetworkResult<TestResponceModel>) in
             switch result {
             case .success:
                 expectation.fulfill()
-            case .failure:
-                XCTFail()
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
 }

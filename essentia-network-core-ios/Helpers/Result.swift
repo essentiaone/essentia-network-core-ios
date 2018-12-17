@@ -6,7 +6,7 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
-public enum Result<Object: Decodable> {
+public enum NetworkResult<Object: Decodable> {
     case success(Object)
     case failure(EssentiaNetworkError)
 }
