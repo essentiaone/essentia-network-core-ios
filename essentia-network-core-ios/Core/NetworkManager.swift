@@ -17,7 +17,6 @@ public class NetworkManager: NetworkManagerInterface {
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
         config.allowsCellularAccess = true
-        config.waitsForConnectivity = true
         urlSession = URLSession(configuration: config)
     }
     
