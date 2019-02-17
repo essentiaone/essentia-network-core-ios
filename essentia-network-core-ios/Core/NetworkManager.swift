@@ -34,12 +34,18 @@ public class NetworkManager: NetworkManagerInterface {
         _ request: RequestProtocol,
         result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
+        makeRequest(request) { (data, error) in
+            self.handleResponse(response: (data, error), result: result)
+        }
+    }
+    
+    public func makeRequest(_ request: RequestProtocol, result: @escaping (Data?, Error?) -> Void) {
         let requestBuilder = RequestBuilder(request: request)
         let urlRequest = requestBuilder.build(for: serverUrl)
         switch request.contentType {
         case .json:
-            urlSession.dataTask(with: urlRequest) { (data, response, error) in
-                self.handleResponse(response: (data, error), result: result)
+            urlSession.dataTask(with: urlRequest) { (data, _, error) in
+                result(data, error)
                 }.resume()
         }
         Logger.shared.logEvent(.httpRequest(urlRequest))
