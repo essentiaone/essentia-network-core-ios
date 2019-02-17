@@ -16,6 +16,10 @@ public class NetworkManager: NetworkManagerInterface {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
+        config.allowsCellularAccess = true
+        if #available(iOS 11, *) {
+            config.waitsForConnectivity = true
+        }
         urlSession = URLSession(configuration: config)
     }
     
