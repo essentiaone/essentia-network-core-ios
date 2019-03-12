@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
   s.static_framework  = true
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.13'
+  s.tvos.deployment_target = '11.0'
+  s.watchos.deployment_target = '4.0'
 
   s.module_name   = "EssentiaNetworkCore"
   s.source_files = 'essentia-network-core-ios/**/*.{swift}'
