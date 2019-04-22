@@ -6,6 +6,8 @@
 //  Copyright © 2018 Essentia. All rights reserved.
 //
 
+import Foundation
+
 public enum NetworkResult<Object: Decodable> {
     case success(Object)
     case failure(EssentiaNetworkError)

@@ -8,10 +8,7 @@
 
 import XCTest
 
-private var responce: [String: Any] =  ["userId": 1,
-                         "id": 1,
-                         "title": "delectus aut autem",
-                         "completed": false]
+private var expectaionModel = TestResponceModel(userId: 1, id: 1, title: "delectus aut autem", completed: false)
 
 class EssentiaNetworkCoreTests: XCTestCase {
     let network = NetworkManager("https://jsonplaceholder.typicode.com")
@@ -31,7 +28,11 @@ class EssentiaNetworkCoreTests: XCTestCase {
         let expectation = self.expectation(description: "Returns responce")
         network.request(TestEndpoint.one) { (result: NetworkResult<TestResponceModel>) in
             switch result {
-            case .success:
+            case .success(let object):
+                let encoder = JSONEncoder()
+                let lhs = try? encoder.encode(object)
+                let rhs = try? encoder.encode(expectaionModel)
+                XCTAssertEqual(lhs, rhs)
                 expectation.fulfill()
             case .failure(let error):
                 print(error.localizedDescription)
