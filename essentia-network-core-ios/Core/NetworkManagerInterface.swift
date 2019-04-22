@@ -10,11 +10,7 @@ import Foundation
 
 public protocol NetworkManagerInterface {
     
-    func makeSyncRequest<SuccessModel: Decodable> (
-        _ request: RequestProtocol,
-        result: @escaping (NetworkResult<SuccessModel>) -> Void
-    )
-    func makeAsyncRequest<SuccessModel: Decodable> (
+    func request<SuccessModel: Decodable> (
         _ request: RequestProtocol,
         result: @escaping (NetworkResult<SuccessModel>) -> Void
     )

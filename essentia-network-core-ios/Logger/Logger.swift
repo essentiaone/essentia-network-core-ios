@@ -25,6 +25,8 @@ public class Logger {
             message.append(request.curlString)
         case .message(_, let msg):
             message.append(msg ?? Constants.unknownError)
+        case .errorEvent(_, let error):
+            message.append(error.localizedDescription)
         }
         consolePrintEvent(message: message)
     }
