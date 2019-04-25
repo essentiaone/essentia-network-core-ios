@@ -26,7 +26,9 @@ public class NetworkManager: NetworkManagerInterface {
         result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         makeRequest(request) { (data, error) in
-            self.handleResponse(response: (data, error), result: result)
+            DispatchQueue.main.async {
+                self.handleResponse(response: (data, error), result: result)
+            }
         }
     }
     
