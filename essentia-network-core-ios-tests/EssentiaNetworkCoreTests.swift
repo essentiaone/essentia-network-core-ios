@@ -24,9 +24,9 @@ class EssentiaNetworkCoreTests: XCTestCase {
         super.tearDown()
     }
     
-    func testRequestWithResultModel() {
-        let expectation = self.expectation(description: "Returns responce model")
-        network.makeAsyncRequest(TestEndpoint.one) { (result: NetworkResult<TestResponceModel>) in
+    func testExample() {
+        let expectation = self.expectation(description: "Returns responce")
+        network.request(TestEndpoint.one) { (result: NetworkResult<TestResponceModel>) in
             switch result {
             case .success(let object):
                 let encoder = JSONEncoder()

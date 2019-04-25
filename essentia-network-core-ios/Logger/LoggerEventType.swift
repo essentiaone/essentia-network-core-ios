@@ -34,10 +34,13 @@ public enum LoggerEventMessageType {
 
 public enum LoggerEventType {
     case message(LoggerEventMessageType, String?)
+    case errorEvent(LoggerEventMessageType, Error)
     case httpRequest(URLRequest)
     
     var consoleMarker: String {
         switch self {
+        case .errorEvent(let event, _):
+            return event.consoleMarker
         case .message(let event, _):
             return event.consoleMarker
         case .httpRequest:

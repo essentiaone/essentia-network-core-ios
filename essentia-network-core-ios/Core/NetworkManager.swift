@@ -14,27 +14,14 @@ public class NetworkManager: NetworkManagerInterface {
     public init(_ serverUrl: String) {
         self.serverUrl = serverUrl
         let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.requestCachePolicy = .reloadRevalidatingCacheData
         config.urlCache = nil
-        config.allowsCellularAccess = true
-        if #available(iOS 11, *) {
-            config.waitsForConnectivity = true
-        }
         urlSession = URLSession(configuration: config)
     }
     
     let serverUrl: String
     
-    public func makeAsyncRequest<SuccessModel: Decodable> (
-            _ request: RequestProtocol,
-            result: @escaping (NetworkResult<SuccessModel>) -> Void
-        ) {
-        DispatchQueue.global().async {
-            self.makeSyncRequest(request, result: result)
-        }
-    }
-    
-    public func makeSyncRequest<SuccessModel: Decodable> (
+    public func request<SuccessModel: Decodable> (
         _ request: RequestProtocol,
         result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
@@ -59,7 +46,6 @@ public class NetworkManager: NetworkManagerInterface {
             response: (Data?, Error?),
             result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
-        DispatchQueue.main.async {
             guard let data = response.0 else {
                 guard let error = response.1 else {
                     result(.failure(.unknownError))
@@ -68,13 +54,13 @@ public class NetworkManager: NetworkManagerInterface {
                 result(.failure(EssentiaNetworkError.defaultError(error)))
                 return
             }
-            guard let object = try? JSONDecoder().decode(SuccessModel.self, from: data) else {
-                Logger.shared.logEvent(.message(.warning, String(data: data, encoding: .utf8)))
+            do {
+                let object = try JSONDecoder().decode(SuccessModel.self, from: data)
+                result(.success(object))
+            } catch {
+                Logger.shared.logEvent(.errorEvent(.warning, error))
                 self.handleError(response: data, result: result)
-                return
             }
-            result(.success(object))
-        }
     }
     
     private func handleError<SuccessModel: Decodable> (
@@ -82,12 +68,13 @@ public class NetworkManager: NetworkManagerInterface {
             result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
         let decoder = JSONDecoder()
-        guard let failedObject = try? decoder.decode(EssentiaNetworkError.self, from: response) else {
-            Logger.shared.logEvent(.message(.error, String(data: response, encoding: .utf8)))
+        do {
+            let failedObject = try decoder.decode(EssentiaNetworkError.self, from: response)
+            Logger.shared.logEvent(.message(.error, String(describing: failedObject)))
+            result(.failure(failedObject))
+        } catch {
+            Logger.shared.logEvent(.errorEvent(.error, error))
             result(.failure(.unknownError))
-            return
         }
-        Logger.shared.logEvent(.message(.error, String(describing: failedObject)))
-        result(.failure(failedObject))
     }
 }
