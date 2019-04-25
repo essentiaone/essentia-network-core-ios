@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'essentia-network-core-ios'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Essentia network core'
 
   s.homepage         = 'https://github.com/essentiaone/essentia-network-core-ios.git'
