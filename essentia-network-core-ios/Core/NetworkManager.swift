@@ -25,14 +25,14 @@ public class NetworkManager: NetworkManagerInterface {
         _ request: RequestProtocol,
         result: @escaping (NetworkResult<SuccessModel>) -> Void
         ) {
-        makeRequest(request) { (data, error) in
+        requestData(request) { (data, error) in
             DispatchQueue.main.async {
                 self.handleResponse(response: (data, error), result: result)
             }
         }
     }
     
-    public func makeRequest(_ request: RequestProtocol, result: @escaping (Data?, Error?) -> Void) {
+    public func requestData(_ request: RequestProtocol, result: @escaping (Data?, Error?) -> Void) {
         let requestBuilder = RequestBuilder(request: request)
         let urlRequest = requestBuilder.build(for: serverUrl)
         switch request.contentType {

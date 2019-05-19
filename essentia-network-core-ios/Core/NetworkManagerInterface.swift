@@ -14,4 +14,6 @@ public protocol NetworkManagerInterface {
         _ request: RequestProtocol,
         result: @escaping (NetworkResult<SuccessModel>) -> Void
     )
+    
+    func requestData(_ request: RequestProtocol, result: @escaping (Data?, Error?) -> Void)
 }
