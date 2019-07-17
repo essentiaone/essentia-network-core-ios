@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class RxNetworkManager {
+public class RxNetworkManager: RxNetworkManagerInterface {
     private var urlSession: URLSession
     private var serverUrl: String
     
@@ -18,11 +18,17 @@ public class RxNetworkManager {
         self.serverUrl = url
     }
     
-    public func request(_ request: RequestProtocol) -> Observable<Codable> {
-        
+    public func request<SuccessModel: Decodable>(_ request: RequestProtocol) -> Observable<SuccessModel> {
+        return Observable.create({ (observer) -> Disposable in
+            
+            return Disposables.create()
+        })
     }
     
     public func requestData(_ request: RequestProtocol) -> Observable<Data> {
-        
+        return Observable.create({ (observer) -> Disposable in
+            
+            return Disposables.create()
+        })
     }
 }
