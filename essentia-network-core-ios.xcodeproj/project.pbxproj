@@ -30,6 +30,8 @@
 		34B70BB7214D5E0D00FFD48C /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFA214D54F1003BF737 /* RequestBuilder.swift */; };
 		34B70BB8214D5E1100FFD48C /* URLRequest+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFF214D54F1003BF737 /* URLRequest+curl.swift */; };
 		34B70BB9214D5E1500FFD48C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFD214D54F1003BF737 /* Result.swift */; };
+		4A49299A26654E1A4E2C54DC /* Pods_essentia_network_core_ios_tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60315E0287CE83F0CD3D4EED /* Pods_essentia_network_core_ios_tests.framework */; };
+		C591B0D8FA2C6477CCCCF1E9 /* Pods_essentia_network_core_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D486B95A563AE5F2E2ABB3 /* Pods_essentia_network_core_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,12 @@
 		34B70BA5214D5BBC00FFD48C /* EssentiaNetworkCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentiaNetworkCoreTests.swift; sourceTree = "<group>"; };
 		34B70BA7214D5BBC00FFD48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34B70BAE214D5C2C00FFD48C /* TestEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEndpoint.swift; sourceTree = "<group>"; };
+		37C03C40EE0FF71B5EC16DFF /* Pods-essentia-network-core-ios-tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-network-core-ios-tests.debug.xcconfig"; path = "Target Support Files/Pods-essentia-network-core-ios-tests/Pods-essentia-network-core-ios-tests.debug.xcconfig"; sourceTree = "<group>"; };
+		40D486B95A563AE5F2E2ABB3 /* Pods_essentia_network_core_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_essentia_network_core_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60315E0287CE83F0CD3D4EED /* Pods_essentia_network_core_ios_tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_essentia_network_core_ios_tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92524A670E2AEC59D2357EF6 /* Pods-essentia-network-core-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-network-core-ios.release.xcconfig"; path = "Target Support Files/Pods-essentia-network-core-ios/Pods-essentia-network-core-ios.release.xcconfig"; sourceTree = "<group>"; };
+		D2CFAB78756FF83AA78EE6F4 /* Pods-essentia-network-core-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-network-core-ios.debug.xcconfig"; path = "Target Support Files/Pods-essentia-network-core-ios/Pods-essentia-network-core-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		ECB9B251BD42224264164FB8 /* Pods-essentia-network-core-ios-tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-essentia-network-core-ios-tests.release.xcconfig"; path = "Target Support Files/Pods-essentia-network-core-ios-tests/Pods-essentia-network-core-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C591B0D8FA2C6477CCCCF1E9 /* Pods_essentia_network_core_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B70BA8214D5BBC00FFD48C /* libessentia-network-core-ios.a in Frameworks */,
+				4A49299A26654E1A4E2C54DC /* Pods_essentia_network_core_ios_tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +107,8 @@
 				346B7AEF214D5204003BF737 /* essentia-network-core-ios */,
 				34B70BA4214D5BBC00FFD48C /* essentia-network-core-ios-tests */,
 				346B7AEE214D5204003BF737 /* Products */,
+				D78C943EBFE1A50C9CF85BDA /* Pods */,
+				CE274DC36A5DD031BFA408AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +188,27 @@
 			path = "essentia-network-core-ios-tests";
 			sourceTree = "<group>";
 		};
+		CE274DC36A5DD031BFA408AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40D486B95A563AE5F2E2ABB3 /* Pods_essentia_network_core_ios.framework */,
+				60315E0287CE83F0CD3D4EED /* Pods_essentia_network_core_ios_tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D78C943EBFE1A50C9CF85BDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2CFAB78756FF83AA78EE6F4 /* Pods-essentia-network-core-ios.debug.xcconfig */,
+				92524A670E2AEC59D2357EF6 /* Pods-essentia-network-core-ios.release.xcconfig */,
+				37C03C40EE0FF71B5EC16DFF /* Pods-essentia-network-core-ios-tests.debug.xcconfig */,
+				ECB9B251BD42224264164FB8 /* Pods-essentia-network-core-ios-tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 346B7AF4214D5204003BF737 /* Build configuration list for PBXNativeTarget "essentia-network-core-ios" */;
 			buildPhases = (
+				10220E58A522D7844A376C99 /* [CP] Check Pods Manifest.lock */,
 				346B7AE9214D5204003BF737 /* Sources */,
 				346B7AEA214D5204003BF737 /* Frameworks */,
 				346B7AEB214D5204003BF737 /* CopyFiles */,
@@ -201,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34B70BAD214D5BBC00FFD48C /* Build configuration list for PBXNativeTarget "essentia-network-core-ios-tests" */;
 			buildPhases = (
+				E2A66179150F4B94E59C2BCD /* [CP] Check Pods Manifest.lock */,
 				34B70B9F214D5BBC00FFD48C /* Sources */,
 				34B70BA0214D5BBC00FFD48C /* Frameworks */,
 				34B70BA1214D5BBC00FFD48C /* Resources */,
@@ -265,6 +300,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		10220E58A522D7844A376C99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-essentia-network-core-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		34B70B9E214D593100FFD48C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +334,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		E2A66179150F4B94E59C2BCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-essentia-network-core-ios-tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -446,6 +525,7 @@
 		};
 		346B7AF5214D5204003BF737 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CFAB78756FF83AA78EE6F4 /* Pods-essentia-network-core-ios.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;
@@ -459,6 +539,7 @@
 		};
 		346B7AF6214D5204003BF737 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92524A670E2AEC59D2357EF6 /* Pods-essentia-network-core-ios.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;
@@ -472,6 +553,7 @@
 		};
 		34B70BAB214D5BBC00FFD48C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37C03C40EE0FF71B5EC16DFF /* Pods-essentia-network-core-ios-tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;
@@ -490,6 +572,7 @@
 		};
 		34B70BAC214D5BBC00FFD48C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECB9B251BD42224264164FB8 /* Pods-essentia-network-core-ios-tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X24R65DM8E;

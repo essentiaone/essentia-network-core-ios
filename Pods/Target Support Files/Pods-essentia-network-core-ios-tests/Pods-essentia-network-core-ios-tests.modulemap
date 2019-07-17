@@ -1,0 +1,6 @@
+framework module Pods_essentia_network_core_ios_tests {
+  umbrella header "Pods-essentia-network-core-ios-tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
