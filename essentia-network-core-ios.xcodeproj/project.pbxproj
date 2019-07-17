@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343E998622DFD8C900452D3E /* RxNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E998522DFD8C900452D3E /* RxNetworkManager.swift */; };
+		343E998822DFD9BF00452D3E /* DefaultNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343E998722DFD9BF00452D3E /* DefaultNetworkSession.swift */; };
 		346B7B00214D54F1003BF737 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AF8214D54F1003BF737 /* NetworkManager.swift */; };
 		346B7B01214D54F1003BF737 /* NetworkManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AF9214D54F1003BF737 /* NetworkManagerInterface.swift */; };
 		346B7B02214D54F1003BF737 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B7AFA214D54F1003BF737 /* RequestBuilder.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		343E998522DFD8C900452D3E /* RxNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNetworkManager.swift; sourceTree = "<group>"; };
+		343E998722DFD9BF00452D3E /* DefaultNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkSession.swift; sourceTree = "<group>"; };
 		346B7AED214D5204003BF737 /* libessentia-network-core-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libessentia-network-core-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		346B7AF8214D54F1003BF737 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		346B7AF9214D54F1003BF737 /* NetworkManagerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerInterface.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				346B7AF9214D54F1003BF737 /* NetworkManagerInterface.swift */,
 				346B7AFA214D54F1003BF737 /* RequestBuilder.swift */,
 				346B7AFB214D54F1003BF737 /* RequestProtocol.swift */,
+				343E998522DFD8C900452D3E /* RxNetworkManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				346B7AFF214D54F1003BF737 /* URLRequest+curl.swift */,
+				343E998722DFD9BF00452D3E /* DefaultNetworkSession.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,8 +376,10 @@
 				346B7B0C214D55AE003BF737 /* EssentiaError.swift in Sources */,
 				346B7B04214D54F1003BF737 /* Result.swift in Sources */,
 				346B7B01214D54F1003BF737 /* NetworkManagerInterface.swift in Sources */,
+				343E998622DFD8C900452D3E /* RxNetworkManager.swift in Sources */,
 				346B7B0A214D554F003BF737 /* LoggerEventType.swift in Sources */,
 				346B7B09214D554F003BF737 /* Logger.swift in Sources */,
+				343E998822DFD9BF00452D3E /* DefaultNetworkSession.swift in Sources */,
 				346B7B00214D54F1003BF737 /* NetworkManager.swift in Sources */,
 				346B7B03214D54F1003BF737 /* RequestProtocol.swift in Sources */,
 			);
