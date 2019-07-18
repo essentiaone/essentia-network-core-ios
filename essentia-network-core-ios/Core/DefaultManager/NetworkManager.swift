@@ -10,16 +10,12 @@ import Foundation
 
 public class NetworkManager: NetworkManagerInterface {
     private var urlSession: URLSession
+    private let serverUrl: String
     
     public init(_ serverUrl: String) {
         self.serverUrl = serverUrl
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .reloadRevalidatingCacheData
-        config.urlCache = nil
-        urlSession = URLSession(configuration: config)
+        urlSession = URLSession.defaultNetworkSession
     }
-    
-    let serverUrl: String
     
     public func request<SuccessModel: Decodable> (
         _ request: RequestProtocol,
