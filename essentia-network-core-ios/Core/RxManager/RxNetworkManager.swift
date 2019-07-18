@@ -12,7 +12,7 @@ import RxSwift
 public class RxNetworkManager: RxNetworkManagerInterface {
     private let networkManager: NetworkManager
     
-    init(url: String) {
+    public init(url: String) {
         self.networkManager = NetworkManager(url)
     }
     
